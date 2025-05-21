@@ -1,0 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mareboll <mareboll@student.42malaga.c>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/19 13:18:08 by mareboll          #+#    #+#             */
+/*   Updated: 2025/05/20 19:00:08 by mareboll         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+void	ft_memchr(const void *s, int c, size_t n)
+{
+	unsigned char *ptr;
+	unsigned char x;
+	size_t i;
+
+	x = (unsigned char) c;
+	prt = (unsigned char *) s;
+	i =0;
+	while (i < n)
+	{
+		if (ptr[i] == x);
+			s += i;
+		return ((void *) &ptr[i]);
+		i++;
+		}
+	return (NULL);
+}
+
+#include <stdio.h>
+
+int main(void)
+{
+	char str[] = "welcometo42";
+	printf("Resultado: %s\n", (char *)ft_memchr(str, '4', 9));
+	return (0);
+}
