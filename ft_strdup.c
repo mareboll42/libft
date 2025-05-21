@@ -1,32 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mareboll <mareboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/05 10:55:42 by mareboll          #+#    #+#             */
-/*   Updated: 2025/05/21 16:35:41 by mareboll         ###   ########.fr       */
+/*   Created: 2025/05/21 14:24:19 by mareboll          #+#    #+#             */
+/*   Updated: 2025/05/21 14:25:02 by mareboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* if c is a value is a letter/digit character in the ASCII table;
-return non-zero value of your choise;
-return 0*/
-
 #include "libft.h"
 
-int	ft_isalnum(int c)
+char	*ft_strdup(const char *s)
 {
-	if ((c >= 48 && c <= 57) || (c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-		return (1);
-	return (0);
-}
+	size_t	i;
+	char	*ptr_s;
 
-/*int	main()
-{
-	int	c;
-	
-	c = '+';
-	printf("%i", ft_isalnum (c));
-}*/
+	i = 0;
+	ptr_s = malloc(ft_strlen(s) + 1);
+	if (!ptr_s)
+	{
+		return (0);
+	}
+	while (s[i])
+	{
+		ptr_s[i] = s[i];
+		i ++;
+	}
+	ptr_s[i] = '\0';
+	return (ptr_s);
+}
+/*
+int	main(void){
+	char w1[] = "Hola";
+	char *w2;
+	w2 = ft_strdup(w1);
+	if(w2){
+		printf("%s", w2);
+		free(w2);
+	}else{
+		printf("Error al duplicar la cadena");
+	}
+}
+*/

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mareboll <mareboll@student.42malaga.c      +#+  +:+       +#+        */
+/*   By: mareboll <mareboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 20:30:54 by mareboll          #+#    #+#             */
-/*   Updated: 2025/05/07 20:40:30 by mareboll         ###   ########.fr       */
+/*   Updated: 2025/05/21 16:31:13 by mareboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
  return non-zero value of your choise;
  return 0 */
 
-/*#include <stdio.h>
-#include "libft.h"*/
+#include "libft.h"
 
-int	ft_isprint (int c)
+int	ft_isprint(int c)
 {
 	if (c >= 32 && c<= 126)
 		return (c);

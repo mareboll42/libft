@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mareboll <mareboll@student.42malaga.c      +#+  +:+       +#+        */
+/*   By: mareboll <mareboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/07 21:23:34 by mareboll          #+#    #+#             */
-/*   Updated: 2025/05/07 21:26:39 by mareboll         ###   ########.fr       */
+/*   Created: 2025/05/21 14:36:39 by mareboll          #+#    #+#             */
+/*   Updated: 2025/05/21 14:37:08 by mareboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_putendl_fd(char *s, int fd)
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	while (*s != '\0')
+	{
+		write (fd, s, 1);
+		s++;
+	}
+	write(fd, "\n", 1);
+	return ;
 }
-
-/*int	main()
-{
-	char s[] = "Estoycansadajefe";
-	printf("Mi string tiene una longuitud de: %zu", ft_strlen(s));
-}*/
+/*
+int	main(void){
+	char str[] = "holaaa";
+	ft_putendl_fd(str, 1);
+	return(0);
+}
+*/

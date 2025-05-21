@@ -1,32 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mareboll <mareboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/05 10:55:42 by mareboll          #+#    #+#             */
-/*   Updated: 2025/05/21 16:35:41 by mareboll         ###   ########.fr       */
+/*   Created: 2025/05/21 14:37:42 by mareboll          #+#    #+#             */
+/*   Updated: 2025/05/21 14:37:57 by mareboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* if c is a value is a letter/digit character in the ASCII table;
-return non-zero value of your choise;
-return 0*/
-
 #include "libft.h"
 
-int	ft_isalnum(int c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	if ((c >= 48 && c <= 57) || (c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-		return (1);
-	return (0);
-}
+	char	res;
 
-/*int	main()
-{
-	int	c;
-	
-	c = '+';
-	printf("%i", ft_isalnum (c));
-}*/
+	if (n == -2147483648)
+	{
+		write(fd, "-2147483648", 11);
+		return ;
+	}
+	if (n < 0)
+	{
+		write (fd, "-", 1);
+		n = -n;
+	}
+	if (n >= 10)
+		ft_putnbr_fd(n / 10, fd);
+	res = n % 10 + '0';
+	write(fd, &res, 1);
+}
+/*
+int	main(void){
+	int n1 = -2147483648;
+	ft_putnbr_fd(n1, 1);
+}
+*/

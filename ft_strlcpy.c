@@ -10,15 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdio.h>
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 
-	if (!dst || !src)
-		return (0);
+	/*if (!dst || !src)
+		return (0);*/
 	i = 0;
 	if (size > 0)
 	{
@@ -35,7 +34,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	return (i);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	char origen[] = "Hola mundo";
 	char destino[6]; // solo caben 5 letras + '\0'
@@ -46,4 +45,4 @@ int	main(void)
 	printf("Longitud total del src: %zu\n", resultado);
 
 	return (0);
-}
+}*/

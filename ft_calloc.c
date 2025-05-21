@@ -1,32 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mareboll <mareboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/05 10:55:42 by mareboll          #+#    #+#             */
-/*   Updated: 2025/05/21 16:35:41 by mareboll         ###   ########.fr       */
+/*   Created: 2025/05/21 14:23:08 by mareboll          #+#    #+#             */
+/*   Updated: 2025/05/21 14:23:39 by mareboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* if c is a value is a letter/digit character in the ASCII table;
-return non-zero value of your choise;
-return 0*/
-
 #include "libft.h"
 
-int	ft_isalnum(int c)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	if ((c >= 48 && c <= 57) || (c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+	void	*ptr_nmemb;
+
+	ptr_nmemb = malloc(nmemb * size);
+	if (!ptr_nmemb)
+	{
+		return (0);
+	}
+	ft_bzero(ptr_nmemb, nmemb * size);
+	return (ptr_nmemb);
+}
+/*
+int main(void)
+{
+	char *str;
+	int i;
+
+	str = ft_calloc(1, 5);
+	if (!str)
 		return (1);
+
+	for (i = 0; i < 4; i++)
+		str[i] = 'a';
+
+	printf("%s\n", str);
+
+	free(str)
 	return (0);
 }
-
-/*int	main()
-{
-	int	c;
-	
-	c = '+';
-	printf("%i", ft_isalnum (c));
-}*/
+*/

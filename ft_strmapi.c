@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mareboll <mareboll@student.42malaga.c      +#+  +:+       +#+        */
+/*   By: mareboll <mareboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/07 21:23:34 by mareboll          #+#    #+#             */
-/*   Updated: 2025/05/07 21:26:39 by mareboll         ###   ########.fr       */
+/*   Created: 2025/05/21 14:32:18 by mareboll          #+#    #+#             */
+/*   Updated: 2025/05/21 14:32:41 by mareboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
-	size_t	i;
+	unsigned int	i;
+	char			*res;
 
+	res = malloc((ft_strlen(s) + 1) * sizeof(char));
+	if (!res)
+		return (NULL);
 	i = 0;
-	while (s[i] != '\0')
+	while (i < ft_strlen(s))
+	{
+		res[i] = (*f)(i, s[i]);
 		i++;
-	return (i);
+	}
+	res[i] = 0;
+	return (res);
 }
-
-/*int	main()
-{
-	char s[] = "Estoycansadajefe";
-	printf("Mi string tiene una longuitud de: %zu", ft_strlen(s));
-}*/

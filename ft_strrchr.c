@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                      :::      ::::::::   */
+/*   ft_strchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mareboll <mareboll@student.42malaga.c>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -27,7 +27,7 @@ char	*ft_strrchr(const char *s, int c)
 	return ((char *)ultima);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	const char *texto = "Hola Málaga 42";
 	char buscar = 'a';
@@ -39,4 +39,4 @@ int	main(void)
 		printf("Carácter '%c' no encontrado.\n", buscar);
 
 	return (0);
-}
+}*/

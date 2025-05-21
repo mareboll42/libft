@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mareboll <mareboll@student.42malaga.c      +#+  +:+       +#+        */
+/*   By: mareboll <mareboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/07 21:23:34 by mareboll          #+#    #+#             */
-/*   Updated: 2025/05/07 21:26:39 by mareboll         ###   ########.fr       */
+/*   Created: 2025/05/21 14:34:47 by mareboll          #+#    #+#             */
+/*   Updated: 2025/05/21 14:35:16 by mareboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_putchar_fd(char c, int fd)
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	write(fd, &c, 1);
 }
-
-/*int	main()
-{
-	char s[] = "Estoycansadajefe";
-	printf("Mi string tiene una longuitud de: %zu", ft_strlen(s));
-}*/
+/*
+int	main(void){
+	char letra = 'x';
+	ft_putchar_fd(letra, 1);
+	return(0);
+}
+*/

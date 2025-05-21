@@ -13,24 +13,23 @@
 /*this function is the same as the ft_memset, except the character to write 
 is always a null character (0)*/
 
-#include <stdio.h>
 #include "libft.h"
 
-void    ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-    unsigned char *ptr;
-    size_t i;
+	size_t				i;
+	unsigned char		*ptr;
 
-    ptr = (unsigned char *)s;
-    i = 0;
-    while (i <0)
-    {
-        ptr[i] = 0;
-        i++;
-    }
+	ptr = (unsigned char *)s;
+	i = 0;
+	while (i < n)
+	{
+		ptr[i] = 0;
+		i++;
+	}
 }
 
-int main(void)
+/*int main(void)
 {
     char buffer[9] = "gameover";
     printf("Antes de ft_bzero: %s\n", buffer);
@@ -39,8 +38,6 @@ int main(void)
 
     return (0);
 }
-
-/*#include <stdio.h>
 
 void    ft_bzero(void *s, size_t n)
 {

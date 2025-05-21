@@ -12,30 +12,27 @@
 
 #include "libft.h"
 
-void	ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char *ptr;
 	unsigned char x;
 	size_t i;
 
 	x = (unsigned char) c;
-	prt = (unsigned char *) s;
+	ptr = (unsigned char *) s;
 	i =0;
 	while (i < n)
 	{
-		if (ptr[i] == x);
-			s += i;
-		return ((void *) &ptr[i]);
+		if (ptr[i] == x)
+			return ((void *) &ptr[i]);
 		i++;
 		}
 	return (NULL);
 }
 
-#include <stdio.h>
-
-int main(void)
+/*int main(void)
 {
 	char str[] = "welcometo42";
 	printf("Resultado: %s\n", (char *)ft_memchr(str, '4', 9));
 	return (0);
-}
+}*/

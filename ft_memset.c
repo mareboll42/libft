@@ -15,7 +15,6 @@ we have to convert b to a pointer to unsigned char,
 c will be to convert to an unsigned char,
 return the first parameter of the funtion (void *b string)*/
 
-#include <stdio.h>
 #include "libft.h"
 
 void    *ft_memset(void *b, int c, size_t len)
@@ -33,11 +32,11 @@ void    *ft_memset(void *b, int c, size_t len)
     return (b);
 }
 
-int main(void)
+/*int main(void)
 {
     char buffer[9] = "gameover";
     
     ft_memset(buffer, 'x', 4);
     printf("Resultado: %s\n", buffer);
     return (0);
-}
+}*/

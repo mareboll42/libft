@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -25,7 +25,7 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	const char *texto = "Piscina42 Málaga";
 	char buscar = '4';
@@ -37,4 +37,4 @@ int	main(void)
 		printf("Caracter '%c' no encontrado.\n", buscar);
 
 	return (0);
-}
+}*/

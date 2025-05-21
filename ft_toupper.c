@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_toupper(int c)
 {
@@ -19,7 +19,7 @@ int	ft_toupper(int c)
 	return (c);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	char letra1 = 'a';
 	char letra2 = 'Z';
@@ -30,4 +30,4 @@ int	main(void)
 	printf("'%c' → '%c'\n", simbolo, ft_toupper(simbolo)); // '3' → '3'
 
 	return (0);
-}
+}*/
